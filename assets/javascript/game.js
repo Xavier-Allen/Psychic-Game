@@ -6,16 +6,18 @@ var guessesLeft= 15;
 var guessesSoFar = [];
 
 // setting the computer choices to an array of different letters
-var computerChoices = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "m", "o", "p", "q", "r", "s", "t", "u", "v", "w", "s", "y", "z"];
-
+var computerChoices = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"];
+var userGuess = event.key;
 // setting the letter the computer chose
 var letter = computerChoices[Math.floor(Math.random() * computerChoices.length)];
 
         
 // creating a function that runs the game
 document.onkeyup = function psychic(event){
-    var userGuess = event.key;
+
+    // for loop that gives the user 15 tries.
     for (var i = 0; i < 15; i++){
+
         if (userGuess !== letter){
             guessesSoFar.push(userGuess);
             guessesLeft -= guessesLeft;
